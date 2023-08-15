@@ -9,26 +9,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: android-orb-v1-{{ checksum "build.gradle.kts" }}
-      - run:
-          name: Chmod permissions
-          command: chmod +x ./gradlew
-      - run:
-          name: Download Dependencies
-          command: ./gradlew :core:androidDependencies
-      - save_cache:
-          key: android-orb-v1-{{ checksum "build.gradle.kts" }}
-          paths:
-            - ~/.gradle/caches/
+          key: android-cache-{{ checksum "app/build.gradle" }}
       - run:
           name: Build "core" Module
           command: ./gradlew :core:build
-      - run:
-          name: Run Tests "core" Module
-          command: ./gradlew :core:test
-      - run:
-          name: Download Dependencies "app" Module
-          command: ./gradlew :app:androidDependencies
       - run:
           name: Build "app" Module
           command: ./gradlew :app:build

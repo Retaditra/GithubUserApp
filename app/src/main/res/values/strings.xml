@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">GithubUserApp</string>
+
+    <string name="search">Search</string>
+    <string name="search_hint">Masukan Nama</string>
+
+    <string name="favorite">Favorite</string>
+
+    <string name="username">Username</string>
+    <string name="userID">ID User</string>
+    <string name="name">Nama Lengkap</string>
+    <string name="company">Perusahaan</string>
+    <string name="avatar">Avatar User</string>
+
+    <string name="FF">00</string>
+    <string name="batas">:</string>
+
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+
+    <string name="error">there is an error</string>
+    <string name="noFollowers">Tidak Ada Followers</string>
+    <string name="noFollowing">Tidak Ada Following</string>
+
+</resources>

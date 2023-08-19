@@ -7,6 +7,7 @@
 
     <ImageView
         android:id="@+id/ivAvatarDt"
+        android:contentDescription="@string/image_user"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginTop="16dp"
@@ -65,7 +66,6 @@
         tools:text="@string/FF" />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -78,7 +78,6 @@
         app:layout_constraintStart_toEndOf="@+id/tvFG" />
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -91,10 +90,9 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/batas"
+        android:text="@string/grid"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -110,7 +108,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager"
+        android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -119,7 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tabs" />
 
     <ToggleButton
-        android:id="@+id/toggle_favorite"
+        android:id="@+id/fab_favorite"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="32dp"
@@ -152,7 +150,6 @@
         app:layout_constraintGuide_begin="243dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

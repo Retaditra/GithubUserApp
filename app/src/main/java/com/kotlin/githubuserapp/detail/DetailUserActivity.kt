@@ -43,7 +43,7 @@ class DetailUserActivity : AppCompatActivity() {
                     val user = it.data
                     showLoading(false)
                     if (user != null) {
-                        displayUserDetail(user)
+                        user.displayUserDetail()
                     } else {
                         Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show()
                     }
@@ -57,23 +57,23 @@ class DetailUserActivity : AppCompatActivity() {
         }
     }
 
-    private fun displayUserDetail(user: User) {
+    private fun User.displayUserDetail() {
         binding.apply {
-            tvUserDt.text = user.username
-            tvID.text = user.id.toString()
-            tvFG.text = user.following.toString()
-            tvFS.text = user.followers.toString()
+            tvUserDt.text = username
+            tvID.text = id.toString()
+            tvFG.text = following.toString()
+            tvFS.text = followers.toString()
 
             Glide.with(this@DetailUserActivity)
-                .load(user.avatarUrl)
+                .load(avatarUrl)
                 .apply(RequestOptions.circleCropTransform())
                 .into(binding.ivAvatarDt)
 
-            var statusFavorite = user.isFavorite
-            toggleFavorite.isChecked = statusFavorite
-            toggleFavorite.setOnCheckedChangeListener { _, isChecked ->
+            var statusFavorite = isFavorite
+            fabFavorite.isChecked = statusFavorite
+            fabFavorite.setOnCheckedChangeListener { _, isChecked ->
                 statusFavorite = isChecked
-                viewModel.setFavorite(user, statusFavorite)
+                viewModel.setFavorite(this@displayUserDetail, statusFavorite)
             }
         }
     }
